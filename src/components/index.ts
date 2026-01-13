@@ -1,0 +1,10 @@
+export { Header } from "./Header";
+export { Navigation } from "./Navigation";
+export { Section } from "./Section";
+export { About } from "./About";
+export { Skills } from "./Skills";
+export { Experience } from "./Experience";
+export { Projects } from "./Projects";
+export { Education } from "./Education";
+export { Certifications } from "./Certifications";
+export { Footer } from "./Footer";
