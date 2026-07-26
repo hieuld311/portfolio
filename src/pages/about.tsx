@@ -39,7 +39,13 @@ export default function AboutPage() {
   return (
     <div className="space-y-8">
       <section className="bg-secondary p-6 sm:p-8">
-        <h1 className="text-4xl font-bold tracking-[-0.05em] sm:text-5xl">Career</h1>
+        <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-primary">
+          CAREER / PROJECT LOG
+        </p>
+        <h1 className="mt-5 text-4xl font-bold tracking-[-0.05em] sm:text-5xl">Career</h1>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          A record of offices, projects, and responsibilities over time.
+        </p>
       </section>
 
       <div className="space-y-1">
