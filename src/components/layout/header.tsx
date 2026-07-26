@@ -1,23 +1,23 @@
-import { NavLink } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/about", label: "About Me" },
+  { to: "#/", label: "Home" },
+  { to: "#/gallery", label: "Gallery" },
+  { to: "#/about", label: "About Me" },
 ];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const currentRoute = window.location.hash || "#/";
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <NavLink
-          to="/"
+        <a
+          href="#/"
           className="group flex items-baseline gap-2 font-mono text-sm font-bold tracking-tight"
           onClick={() => setMobileOpen(false)}
         >
@@ -27,29 +27,25 @@ export function Header() {
           <span className="hidden text-[10px] font-medium tracking-[0.16em] text-muted-foreground sm:inline">
             PERSONAL INDEX
           </span>
-        </NavLink>
+        </a>
 
         <nav className="hidden items-center gap-1 font-mono md:flex">
           {navLinks.map((link) => (
-            <NavLink
+            <a
               key={link.to}
-              to={link.to}
-              end={link.to === "/"}
-              className={({ isActive }) =>
-                  `px-3 py-2 text-xs font-bold tracking-[0.12em] transition-colors ${
-                    isActive
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                }`
-              }
+              href={link.to}
+              className={`px-3 py-2 text-xs font-bold tracking-[0.12em] transition-colors ${
+                currentRoute === link.to
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
+              }`}
             >
               {link.label}
-            </NavLink>
+            </a>
           ))}
           <ThemeToggle />
         </nav>
 
-        {/* Mobile controls */}
         <div className="flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <Button
@@ -58,11 +54,7 @@ export function Header() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
       </div>
@@ -71,21 +63,18 @@ export function Header() {
         <nav className="bg-secondary md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 font-mono">
             {navLinks.map((link) => (
-              <NavLink
+              <a
                 key={link.to}
-                to={link.to}
-                end={link.to === "/"}
+                href={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={({ isActive }) =>
-                  `px-3 py-2 text-xs font-bold tracking-[0.12em] transition-colors ${
-                    isActive
+                className={`px-3 py-2 text-xs font-bold tracking-[0.12em] transition-colors ${
+                  currentRoute === link.to
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:bg-background hover:text-foreground"
-                  }`
-                }
+                }`}
               >
                 {link.label}
-              </NavLink>
+              </a>
             ))}
           </div>
         </nav>
