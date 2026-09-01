@@ -11,47 +11,66 @@ export type CareerTimelineRecord = {
   projects: CareerProject[];
 };
 
-export const careerOffices = [
+export type CareerOffice = {
+  id: string;
+  name: string;
+  location: string;
+  period: string;
+  role: string;
+  timeline: CareerTimelineRecord[];
+};
+
+export const careerOffices: CareerOffice[] = [
   {
     id: "fpt-software",
     name: "FPT Software",
-    location: "Hanoi, Vietnam · On-site",
+    location: "Hanoi, Vietnam",
     period: "Mar 2026 – Present",
-    role: "Android Developer · Full-time",
+    role: "Developer",
     timeline: [
       {
         id: "current-ivi-workstreams",
-        period: "Jun 2026 – Present",
-        label: "Android Automotive IVI Applications (Kotlin/Java,Jetpack Compose, Android 12)",
+        period: "Jun 2026 – Present (CDC)",
+        label: "Android Automotive (Kotlin/Java, Jetpack Compose, Android 12)",
         projects: [
           {
             id: "navigation-plugin",
             title: "Navigation Plugin",
             highlights: [
-              "Developed a navigation plugin that lets third-party AI assistants work with a Mapbox-powered and TripAdvisor navigation application.",
+              "Designed and built a navigation plugin with a documented API, letting third-party AI assistants search, set routes, and get turn-by-turn updates from a Mapbox-powered and TripAdvisor navigation app.",
+              "Covered the full flow end to end: place search, picking a suggestion, setting a route, driving home, and a demo/simulation mode, each with clear success or error results sent back to the assistant.",
             ],
           },
           {
-            id: "ivi-video-sharing",
-            title: "IVI Video Sharing",
+            id: "video-app",
+            title: "Video App",
             highlights: [
-              "Implemented video player for 4 screens with different UI.",
-              "Developed multi-display video sharing from Passenger Seat Screen to Rear Seat Screen.",
+              "Built a video app for the car's four screens (driver console, front passenger, two rear seats), each installable on its own.",
+              "Built the watch-together flow: the front passenger shares a video to the back seats, riders accept or decline, and play, pause, and seek stay in sync across every connected screen.",
             ],
           },
           {
-            id: "widget-p2p-data-display",
-            title: "Widget P2P Data Display",
+            id: "audiobook-player",
+            title: "AudioBook Player",
             highlights: [
-              "Developed a peer-to-peer widget that presents shared data clearly to users.",
+              "Built a single-screen music/audiobook player for the car's dashboard strip display, showing cover art, title, and time-synced lyrics.",
+              "Kept playback running in the background and resuming correctly when the screen is reopened.",
+            ],
+          },
+          {
+            id: "home-screen-widgets",
+            title: "Home Screen Widgets",
+            highlights: [
+              "Built a 3-slot home-screen widget app over a looping background video, showing date/time, driver health, weather, and navigation info.",
+              "Connected the widgets to the car's live vehicle data system through system state.",
             ],
           },
         ],
       },
       {
         id: "car-settings",
-        period: "Mar – Apr 2026",
-        label: "Android Automotive Platform (Java + XML, Android 15)",
+        period: "Mar – May 2026 (DAT)",
+        label: "Android Automotive (Java + XML, Android 15)",
         projects: [
           {
             id: "car-settings-maintenance",
@@ -67,7 +86,7 @@ export const careerOffices = [
   {
     id: "fpt-software-academy",
     name: "FPT Software Academy",
-    location: "Hanoi Capital Region, Vietnam · On-site",
+    location: "Hanoi, Vietnam",
     period: "May 2024 – Mar 2026",
     role: "Internship",
     timeline: [

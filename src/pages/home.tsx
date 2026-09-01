@@ -3,9 +3,9 @@ import {  X } from "lucide-react";
 import { useState } from "react";
 
 const deskNotes = [
-  { label: "DEV", value: "I code...and vibe (Cannot live without AI)", tone: "bg-foreground text-background" },
+  { label: "DEV", value: "Very Inefficient But Entertaining", tone: "bg-foreground text-background" },
   { label: "ART", value: "An old habit", tone: "bg-accent text-accent-foreground" },
-  { label: "NOW PLAYING", value: "A soundtrack for compiling", tone: "bg-primary text-primary-foreground" },
+  { label: "NOW PLAYING", value: "Machines are talking", tone: "bg-primary text-primary-foreground" },
 ];
 
 export default function HomePage() {
@@ -16,10 +16,10 @@ export default function HomePage() {
       <section className="grid gap-6 lg:grid-cols-[1.5fr_0.8fr] lg:gap-8">
         <div className="bg-secondary p-6 sm:p-10">
           <p className="font-mono text-[11px] font-bold tracking-[0.18em] text-primary">
-            2026 / PERSONAL INDEX / VIETNAM
+            PERSONAL INDEX / VIETNAM
           </p>
           <h1 className="mt-8 max-w-3xl text-5xl font-bold leading-[0.92] tracking-[-0.06em] sm:text-7xl lg:text-6xl">
-            Lê Đình Hiếu
+            UEIHDEL
           </h1>
           <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             I code, draw and sometimes play guitar (actually I want to try drums).
@@ -59,16 +59,16 @@ export default function HomePage() {
 
       <section className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="bg-primary p-6 text-primary-foreground sm:p-8">
-          <p className="font-mono text-[10px] font-bold tracking-[0.18em]">SIDE A / NOW PLAYING</p>
-          <p className="mt-10 text-3xl font-bold leading-none tracking-tight">music keeps me sane.</p>
+          <p className="font-mono text-[10px] font-bold tracking-[0.18em]">SIDE A / ME</p>
+          <p className="mt-10 text-3xl font-bold leading-none tracking-tight">quis sum?</p>
           <p className="mt-5 max-w-sm text-sm leading-relaxed opacity-80">
-            I just wanna chill man.
+            who am i?
           </p>
         </div>
         <div className="bg-card p-6 sm:p-8">
           <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-muted-foreground">ABOUT THIS DESK</p>
           <p className="mt-8 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-            A small portfolio for software, art, and the things in between.
+            A small portfolio for code, art, and the things in between.
           </p>
         </div>
       </section>
